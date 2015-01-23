@@ -5,6 +5,13 @@ Discourse plugin for the omniauth-gitlab strategy.
 
 ## Installation
 
+1. Register a new system application in GitLab by visiting `/admin/applications/new`.
+    The redirect URI is of the form:
+
+    ```
+    https://discourse.example.com/auth/gitlab/callback
+    ```
+
 1. Add the plugin's repository url to your container's `app.yml` file:
 
     ```
@@ -26,7 +33,7 @@ Discourse plugin for the omniauth-gitlab strategy.
         GITLAB_APP_ID=gitlabtestid GITLAB_SECRET=gitlabtestsecret GITLAB_SITE_URL=https://git.example.com ./launcher rebuild app
     ```
 
-    Otherwise you can provide these variables in `app.yml` under the `env` section.
+    Otherwise you can add these variables in `app.yml` under the `env` section.
 
 ## License
 
