@@ -47,16 +47,21 @@ class GitLabAuthenticator < ::Auth::Authenticator
     omniauth.provider :gitlab,
      GITLAB_APP_ID,
      GITLAB_SECRET,
-     { client_options: {site: ENV['GITLAB_SITE_URL'], }}
+     {
+       client_options:
+       {
+         site: ENV['GITLAB_SITE_URL'],
+       }
+     }
   end
 end
 
 
-auth_provider :title => 'with GitLab',
-    :message => 'Log in via GitLab (Make sure pop up blockers are not enabled).',
-    :frame_width => 920,
-    :frame_height => 800,
-    :authenticator => GitLabAuthenticator.new
+auth_provider title: 'with GitLab',
+    message: 'Log in via GitLab (Make sure pop up blockers are not enabled).',
+    frame_width: 920,
+    frame_height: 800,
+    authenticator: GitLabAuthenticator.new
 
 
 # We ship with zocial, it may have an icon you like http://zocial.smcllns.com/sample.html
