@@ -50,7 +50,7 @@ class GitLabAuthenticator < ::Auth::Authenticator
      {
        client_options:
        {
-         site: ENV['GITLAB_SITE_URL'],
+         site: ENV['GITLAB_SITE_URL']
        }
      }
   end
@@ -63,17 +63,12 @@ auth_provider title: 'with GitLab',
     frame_height: 800,
     authenticator: GitLabAuthenticator.new
 
-
-# We ship with zocial, it may have an icon you like http://zocial.smcllns.com/sample.html
-#  In our current case we don't have an icon for GitLab
+# Discourse ships with zocial http://zocial.smcllns.com/sample.html
+# In our case we don't have an icon for GitLab.
 register_css <<CSS
 
 .btn-social.gitlab {
   background: #554488;
-}
-
-.btn-social.gitlab:before {
-  content: "G";
 }
 
 CSS
