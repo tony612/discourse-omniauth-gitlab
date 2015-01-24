@@ -25,12 +25,12 @@ Discourse plugin for the omniauth-gitlab strategy.
               - git clone https://gitlab.com/gitlab-org/discourse-omniauth-gitlab.git
     ```
 
-1. Rebuild the container by providing the ID and SECRET values:
+1. Rebuild the container by providing the APP_ID, SECRET and GitLab url values:
 
     ```
         cd /var/discourse
         git pull origin master
-        GITLAB_APP_ID=gitlabtestid GITLAB_SECRET=gitlabtestsecret GITLAB_SITE_URL=https://git.example.com ./launcher rebuild app
+        GITLAB_APP_ID=gitlabtestid GITLAB_SECRET=gitlabtestsecret GITLAB_URL=https://git.example.com ./launcher rebuild app
     ```
 
     Otherwise you can add these variables in `app.yml` under the `env` section.

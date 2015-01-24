@@ -50,7 +50,7 @@ class GitLabAuthenticator < ::Auth::Authenticator
      {
        client_options:
        {
-         site: ENV['GITLAB_SITE_URL']
+         site: ENV['GITLAB_URL']
        }
      }
   end
