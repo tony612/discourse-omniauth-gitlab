@@ -33,7 +33,14 @@ Discourse plugin for the omniauth-gitlab strategy.
         GITLAB_APP_ID=gitlabtestid GITLAB_SECRET=gitlabtestsecret GITLAB_URL=https://git.example.com ./launcher rebuild app
     ```
 
-    Otherwise you can add these variables in `app.yml` under the `env` section.
+    Otherwise you can add these variables in `app.yml` under the `env` section:
+
+    ```
+    ## GitLab OmniAuth settings
+    GITLAB_APP_ID: gitlab_app_id
+    GITLAB_SECRET: gitlab_secret
+    GITLAB_URL: https://gitlab.example.com
+    ```
 
 ## License
 
