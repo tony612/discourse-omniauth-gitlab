@@ -28,18 +28,24 @@ Discourse plugin for the omniauth-gitlab strategy.
 1. Rebuild the container by providing the APP_ID, SECRET and GitLab url values:
 
     ```
-        cd /var/discourse
-        git pull origin master
-        GITLAB_APP_ID=gitlabtestid GITLAB_SECRET=gitlabtestsecret GITLAB_URL=https://git.example.com ./launcher rebuild app
+    chmod 600 /var/discourse/containers/app.yml
     ```
 
-    Otherwise you can add these variables in `/var/discourse/containers/app.yml` under the `env` section:
+    Add these variables in `/var/discourse/containers/app.yml` under the `env` section:
 
     ```
     ## GitLab OmniAuth settings
     GITLAB_APP_ID: gitlab_app_id
     GITLAB_SECRET: gitlab_secret
     GITLAB_URL: https://gitlab.example.com
+    ```
+
+    Now rebuild the app:
+
+    ```
+    cd /var/discourse
+    git pull origin master
+    ./launcher rebuild app
     ```
 
 ## License
