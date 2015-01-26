@@ -3,7 +3,7 @@
 # version: 0.0.1
 # author: Achilleas Pipinellis
 
-gem 'omniauth2-gitlab', '0.0.1'
+gem 'omniauth-gitlab', '1.0.0'
 
 class GitLabAuthenticator < ::Auth::Authenticator
 
