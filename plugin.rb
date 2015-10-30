@@ -1,9 +1,9 @@
 # name:  discourse-omniauth-gitlab
 # about: Authenticate Discourse with GitLab
-# version: 0.0.1
+# version: 0.0.2
 # author: Achilleas Pipinellis
 
-gem 'omniauth-gitlab', '1.0.0'
+gem 'omniauth-gitlab', '1.0.1'
 
 class GitLabAuthenticator < ::Auth::Authenticator
 
@@ -26,16 +26,16 @@ class GitLabAuthenticator < ::Auth::Authenticator
     # Plugin specific data storage
     current_info = ::PluginStore.get("gl", "gl_uid_#{gl_uid}")
 
-    # Check if the user is trying to connect existing account
-      unless current_info
-        existing_user = User.where(email: email).first
-        if existing_user
-          ::PluginStore.set("gl", "gl_uid_#{data[:gl_uid]}", {user_id: existing_user.id })
-          result.user = existing_user
-        end
-      else 
-	    result.user = User.where(id: current_info[:user_id]).first
+    # Check if the user is trying to connect an existing account
+    unless current_info
+      existing_user = User.where(email: email).first
+      if existing_user
+        ::PluginStore.set("gl", "gl_uid_#{data[:gl_uid]}", {user_id: existing_user.id })
+        result.user = existing_user
       end
+    else
+      result.user = User.where(id: current_info[:user_id]).first
+    end
 
     result.name = name
     result.extra_data = { gl_uid: gl_uid }
