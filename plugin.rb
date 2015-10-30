@@ -26,9 +26,15 @@ class GitLabAuthenticator < ::Auth::Authenticator
     # Plugin specific data storage
     current_info = ::PluginStore.get("gl", "gl_uid_#{gl_uid}")
 
-    result.user =
-      if current_info
-        User.where(id: current_info[:user_id]).first
+    # Check if the user is trying to connect existing account
+      unless current_info
+        existing_user = User.where(email: email).first
+        if existing_user
+          ::PluginStore.set("gl", "gl_uid_#{data[:gl_uid]}", {user_id: existing_user.id })
+          result.user = existing_user
+        end
+      else 
+	    result.user = User.where(id: current_info[:user_id]).first
       end
 
     result.name = name
