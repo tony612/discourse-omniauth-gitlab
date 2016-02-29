@@ -2,6 +2,7 @@
 # about: Authenticate Discourse with GitLab
 # version: 0.0.3
 # author: Achilleas Pipinellis
+# url: https://gitlab.com/gitlab-org/discourse-omniauth-gitlab
 
 gem 'omniauth-gitlab', '1.0.2'
 
