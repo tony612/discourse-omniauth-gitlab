@@ -1,9 +1,9 @@
 # name:  discourse-omniauth-gitlab
 # about: Authenticate Discourse with GitLab
-# version: 0.0.2
+# version: 0.0.3
 # author: Achilleas Pipinellis
 
-gem 'omniauth-gitlab', '1.0.1'
+gem 'omniauth-gitlab', '1.0.2'
 
 class GitLabAuthenticator < ::Auth::Authenticator
 
