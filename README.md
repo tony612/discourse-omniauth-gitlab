@@ -12,7 +12,8 @@ Discourse plugin for the omniauth-gitlab strategy.
     https://discourse.example.com/auth/gitlab/callback
     ```
 
-1. Add the plugin's repository url to your container's `app.yml` file:
+1. Add the plugin's repository url to your container's `app.yml` file along with
+   the other plugins:
 
     ```
     hooks:
@@ -21,7 +22,6 @@ Discourse plugin for the omniauth-gitlab strategy.
             cd: $home/plugins
             cmd:
               - mkdir -p plugins
-              - git clone https://github.com/discourse/docker_manager.git
               - git clone https://gitlab.com/gitlab-org/discourse-omniauth-gitlab.git
     ```
 
