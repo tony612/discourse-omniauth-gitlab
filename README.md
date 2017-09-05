@@ -15,7 +15,7 @@ Discourse plugin for the omniauth-gitlab strategy.
 1. Add the plugin's repository url to your container's `app.yml` file along with
    the other plugins:
 
-    ```
+    ```yaml
     hooks:
       after_code:
         - exec:
@@ -33,7 +33,7 @@ Discourse plugin for the omniauth-gitlab strategy.
 
     Add these variables in `/var/discourse/containers/app.yml` under the `env` section:
 
-    ```
+    ```yaml
     ## GitLab OmniAuth settings
     GITLAB_APP_ID: gitlab_app_id
     GITLAB_SECRET: gitlab_secret
@@ -42,7 +42,7 @@ Discourse plugin for the omniauth-gitlab strategy.
 
     Now rebuild the app:
 
-    ```
+    ```bash
     cd /var/discourse
     git pull origin master
     ./launcher rebuild app
