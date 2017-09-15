@@ -3,6 +3,10 @@ discourse-omniauth-gitlab
 
 Discourse plugin for the omniauth-gitlab strategy.
 
+## Contributing
+
+Read more in [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## Installation
 
 1. Register a new system application in GitLab by visiting `/admin/applications/new`.
