@@ -1,6 +1,6 @@
 # name:  discourse-omniauth-gitlab
 # about: Authenticate Discourse with GitLab
-# version: 0.0.3
+# version: 0.0.4
 # author: Achilleas Pipinellis
 # url: https://gitlab.com/gitlab-org/discourse-omniauth-gitlab
 
