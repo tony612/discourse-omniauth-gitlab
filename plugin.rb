@@ -38,9 +38,9 @@ class GitLabAuthenticator < ::Auth::Authenticator
       result.user = User.where(id: current_info[:user_id]).first
     end
 
-    result.name = name
+    result.name  ||= name
+    result.email ||= email
     result.extra_data = { gl_uid: gl_uid }
-    result.email = email
 
     result
   end
