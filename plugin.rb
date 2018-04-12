@@ -70,8 +70,8 @@ auth_provider title: 'with GitLab',
     frame_height: 800,
     authenticator: GitLabAuthenticator.new
 
-# Discourse ships with zocial http://zocial.smcllns.com/sample.html
-# In our case we don't have an icon for GitLab.
+# Use the fontawesome unicode for GitLab
+# https://fontawesome.com/icons/gitlab?style=brands
 register_css <<CSS
 
 .btn-social.gitlab {
