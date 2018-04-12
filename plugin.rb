@@ -29,7 +29,7 @@ class GitLabAuthenticator < ::Auth::Authenticator
 
     # Check if the user is trying to connect an existing account
     unless current_info
-      existing_user = User.where(email: email).first
+      existing_user = User.joins(:user_emails).find_by(user_emails: { email: email })
       if existing_user
         ::PluginStore.set("gl", "gl_uid_#{data[:gl_uid]}", {user_id: existing_user.id })
         result.user = existing_user
