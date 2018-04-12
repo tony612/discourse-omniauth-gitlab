@@ -78,4 +78,8 @@ register_css <<CSS
   background: #554488;
 }
 
+.btn-social.gitlab:before {
+  content: "\f296";
+}
+
 CSS
