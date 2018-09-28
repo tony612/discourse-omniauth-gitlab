@@ -1,0 +1,4 @@
+plugins:
+  gitlab_enabled:
+    client: true
+    default: false

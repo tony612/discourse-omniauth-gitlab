@@ -6,6 +6,8 @@
 
 gem 'omniauth-gitlab', '1.0.2'
 
+enabled_site_setting :gitlab_enabled
+
 class GitLabAuthenticator < ::Auth::Authenticator
 
   GITLAB_APP_ID = ENV['GITLAB_APP_ID']
@@ -13,6 +15,10 @@ class GitLabAuthenticator < ::Auth::Authenticator
 
   def name
     'gitlab'
+  end
+
+  def enabled?
+    SiteSetting.gitlab_enabled?
   end
 
   def after_authenticate(auth_token)
@@ -66,6 +72,7 @@ end
 
 
 auth_provider title: 'with GitLab',
+    enabled_setting: "gitlab_enabled",
     message: 'Log in via GitLab (Make sure pop up blockers are not enabled).',
     frame_width: 920,
     frame_height: 800,
