@@ -58,7 +58,8 @@ class GitLabAuthenticator < ::Auth::Authenticator
        client_options:
        {
          site: ENV['GITLAB_URL']
-       }
+       },
+       scope: 'read_user'
      }
   end
 end
